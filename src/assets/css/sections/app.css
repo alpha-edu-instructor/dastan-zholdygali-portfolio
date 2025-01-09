@@ -1,3 +1,136 @@
 body {
   font-family: "Futura PT Book", serif;
 }
+
+.container {
+  width: 1200px;
+  margin: 100px auto;
+}
+
+.page-title {
+  font-family: "Futura PT Medium", serif;
+  font-size: 48px;
+  line-height: 56px;
+  margin-bottom: 32px;
+}
+
+.page-text {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.page-text:not(:first-child) {
+  margin-top: 24px;
+}
+
+/* Navbar */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 96px;
+}
+
+.nav-part:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 48px;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--black);
+  font-size: 20px;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link::after {
+  content: "";
+  height: 1px;
+  width: 0%;
+  background: var(--black);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s ease;
+}
+
+.nav-link__active {
+  width: 100%;
+}
+
+/* Footer */
+
+.footer {
+  padding: 40px 96px;
+}
+
+.footer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 48px;
+}
+
+.footer-part:last-child {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-bottom {
+  padding-top: 36px;
+  border-top: 1px solid var(--black);
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Social Media button */
+
+.social-media {
+  width: 32px;
+  aspect-ratio: 1/1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.social-media svg {
+  font-size: 24px;
+  color: var(--black);
+}
+
+.social-media:hover svg {
+  color: var(--dark);
+}
+
+.social-media__bg {
+  width: 32px;
+  aspect-ratio: 1/1;
+  border: 2px solid var(--black);
+  border-radius: 4px;
+  background: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease;
+}
+
+.social-media__bg svg {
+  color: var(--white);
+}
+
+.social-media__bg:hover {
+  background: var(--white);
+}
+
+.social-media__bg:hover svg {
+  color: var(--black);
+}

@@ -1,11 +1,12 @@
-import Header from "./components/Header";
+import Layout from "./components/core/Layout";
+import AboutPage from "./pages/AboutPage";
 import "./assets/css/style.css";
 
 function App() {
   return (
-    <div>
-      <Header />
-    </div>
+    <Layout>
+      <AboutPage />
+    </Layout>
   );
 }
 
