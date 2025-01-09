@@ -1,0 +1,26 @@
+.portfolio-list {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.portfolio-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 120px 0;
+  /* background-image: url("../../img/home-bg.jpg"); */
+  background-position: center center;
+  background-size: cover;
+  background-color: var(--light-gray);
+}
+
+.portfolio-section__title {
+  color: var(--black);
+  font-size: 36px;
+  line-height: 48px;
+  text-transform: uppercase;
+  font-family: "Futura PT Demi", serif;
+}

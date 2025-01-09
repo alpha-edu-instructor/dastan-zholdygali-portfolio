@@ -248,4 +248,10 @@ body {
   font-size: 20px;
   line-height: 24px;
   color: var(--black);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.ltc-btn:hover {
+  opacity: 0.8;
 }

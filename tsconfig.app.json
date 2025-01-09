@@ -27,7 +27,10 @@
       "@pages/*": ["./src/pages/*"],
       "@utils/*": ["./src/utils/*"],
       "@components/*": ["./src/components/*"],
-      "@img/*": ["./src/assets/img/*"]
+      "@img/*": ["./src/assets/img/*"],
+      "@firebaseConfig/*": ["./src/firebase/*"],
+      "@redux/*": ["./src/redux/*"],
+      "@hooks/*": ["./src/hooks/*"]
     }
   },
   "include": ["src"]
