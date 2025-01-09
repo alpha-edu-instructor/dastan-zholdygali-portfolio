@@ -65,24 +65,28 @@ const ContactPage: React.FC = () => {
         <form className="contact-form" onSubmit={handleSubmitContactForm}>
           <Input
             title="Full Name"
+            name="fullName"
             value={fullName}
             setValue={setFullName}
             error={errors.fullName}
           />
           <Input
             title="E-mail"
+            name="email"
             value={email}
             setValue={setEmail}
             error={errors.email}
           />
           <Input
             title="Subject"
+            name="subject"
             isRequired={false}
             value={subject}
             setValue={setSubject}
           />
           <Input
             title="Message"
+            name="message"
             isTextarea={true}
             value={message}
             setValue={setMessage}

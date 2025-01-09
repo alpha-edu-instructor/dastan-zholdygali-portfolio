@@ -2,6 +2,7 @@ import { HTMLInputTypeAttribute } from "react";
 
 interface Props {
   title: string;
+  name: string;
   value: string;
   setValue: (value: string) => void;
   isRequired?: boolean;
@@ -12,6 +13,7 @@ interface Props {
 
 const Input: React.FC<Props> = ({
   title,
+  name,
   value,
   setValue,
   isRequired = true,
@@ -29,6 +31,7 @@ const Input: React.FC<Props> = ({
           {error && <p className="input-label__error">{error}</p>}
         </div>
         <textarea
+          name={name}
           value={value}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
             setValue(e.target.value)
@@ -49,6 +52,7 @@ const Input: React.FC<Props> = ({
       </div>
       <input
         type={type}
+        name={name}
         value={value}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           setValue(e.target.value)

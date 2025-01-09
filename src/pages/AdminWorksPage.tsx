@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { getAllCategories } from "@firebaseConfig/firestore";
-import PortfolioSection from "@components/portfolio/PortfolioSection";
+import AddCategoryForm from "@components/admin/AddCategoryForm";
 import { ICategory } from "@utils/interfaces";
+import { getAllCategories } from "@firebaseConfig/firestore";
 import Loader from "@components/shared/Loader";
+import EditCategoryForm from "@components/admin/EditCategoryForm";
 
-const PortfolioPage: React.FC = () => {
+const AdminWorksPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [categories, setCategories] = useState<ICategory[]>([]);
 
@@ -24,21 +25,20 @@ const PortfolioPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="portfolio">
-      <h1 className="page-title">My Works As</h1>
-      {isLoading ? (
-        <div className="portfolio-loader">
-          <Loader />
-        </div>
-      ) : (
-        <div className="portfolio-list">
-          {categories.map((item) => (
-            <PortfolioSection category={item} key={item.id} />
-          ))}
-        </div>
-      )}
+    <div className="admin-works">
+      {isLoading && <Loader isFullPage={true} />}
+      <h1 className="page-title">Works</h1>
+      <div className="admin-works__grid">
+        {categories.map((item) => (
+          <EditCategoryForm
+          category={item}
+          key={item.id}
+          />
+        ))}
+        <AddCategoryForm />
+      </div>
     </div>
   );
 };
 
-export default PortfolioPage;
+export default AdminWorksPage;

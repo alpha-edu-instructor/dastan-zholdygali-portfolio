@@ -7,6 +7,25 @@ body {
   margin: 100px auto;
 }
 
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--black);
+  border-radius: 12px;
+  border: 4px solid var(--white);
+}
+
+::selection {
+  background-color: var(--black);
+  color: var(--white);
+}
+
 .page-title {
   font-family: "Futura PT Medium", serif;
   font-size: 48px;
@@ -254,4 +273,37 @@ body {
 
 .ltc-btn:hover {
   opacity: 0.8;
+}
+
+/* Loader */
+.loader-full__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.loader-full {
+  width: 96px;
+  height: 96px;
+  border: 10px solid var(--black);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
