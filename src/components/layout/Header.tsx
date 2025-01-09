@@ -4,7 +4,7 @@ import {
   CONTACT_PAGE_ROUTE,
   HOME_PAGE_ROUTE,
   PORTFOLIO_PAGE_ROUTE
-} from "../utils/consts";
+} from "@utils/consts";
 import logo from "@img/logo.png";
 
 const Header: React.FC = () => {

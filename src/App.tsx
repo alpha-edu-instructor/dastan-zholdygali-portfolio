@@ -1,11 +1,11 @@
-import Layout from "./components/core/Layout";
-import AboutPage from "./pages/AboutPage";
+import Layout from "@components/core/Layout";
+import AppRouter from "@components/core/AppRouter";
 import "./assets/css/style.css";
 
 function App() {
   return (
     <Layout>
-      <AboutPage />
+      <AppRouter />
     </Layout>
   );
 }

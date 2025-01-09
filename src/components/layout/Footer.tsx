@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import SocialMediaLink from "./SocialMediaLink";
+import SocialMediaLink from "../shared/SocialMediaLink";
 import { HOME_PAGE_ROUTE } from "@utils/consts";
 import logo from "@img/logo.png";
 

@@ -1,13 +1,19 @@
-.about {
+.contact {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 72px;
 }
 
-.about-links {
+.contact-links {
   margin-top: 32px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   grid-gap: 16px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }

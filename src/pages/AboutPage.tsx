@@ -1,4 +1,4 @@
-import SocialMediaLink from "@components/SocialMediaLink";
+import SocialMediaLink from "@components/shared/SocialMediaLink";
 
 const AboutPage: React.FC = () => {
   return (
