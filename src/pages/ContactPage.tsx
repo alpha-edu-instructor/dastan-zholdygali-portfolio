@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { FiCheckCircle } from "react-icons/fi";
 import Input from "@components/shared/Input";
 import Submit from "@components/shared/Submit";
 import SocialMediaLink from "@components/shared/SocialMediaLink";
+import axiosInstance from "@services/axios";
 
 const ContactPage: React.FC = () => {
   const [fullName, setFullName] = useState<string>("");
@@ -9,6 +11,10 @@ const ContactPage: React.FC = () => {
   const [subject, setSubject] = useState<string>("");
   const [message, setMessage] = useState<string>("");
   const [errors, setErrors] = useState<{ [key: string]: string | null }>({});
+  const [response, setResponse] = useState<{ state: number; message: string }>({
+    state: 0,
+    message: ""
+  });
 
   function validateForm() {
     const newErrors: { [key: string]: string | null } = {};
@@ -32,16 +38,38 @@ const ContactPage: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   }
 
-  function handleSubmitContactForm(e: React.FormEvent) {
+  async function handleSubmitContactForm(e: React.FormEvent) {
     e.preventDefault();
 
     if (validateForm()) {
-      console.log(fullName, email, subject, message);
-      setFullName("");
-      setEmail("");
-      setSubject("");
-      setMessage("");
-      setErrors({});
+      try {
+        setResponse({
+          state: 1,
+          message: "Loading..."
+        });
+        await axiosInstance.post("/send", {
+          fullName,
+          email,
+          subject,
+          message
+        });
+        setResponse({
+          state: 2,
+          message: "Email sent successfully"
+        });
+        setFullName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      } catch (error) {
+        console.error("Error sending email:", error);
+        setResponse({
+          state: 3,
+          message: "Failed to send email. Please try again later."
+        });
+      } finally {
+        setErrors({});
+      }
     }
   }
 
@@ -92,6 +120,15 @@ const ContactPage: React.FC = () => {
             setValue={setMessage}
             error={errors.message}
           />
+          {response.state !== 0 && (
+            <div className="contact-form__response">
+              {response.state === 1 && (
+                <span className="contact-form__loader"></span>
+              )}
+              {response.state === 2 && <FiCheckCircle />}
+              {response.message}
+            </div>
+          )}
           <div>
             <Submit title="Submit" />
           </div>

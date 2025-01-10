@@ -12,7 +12,8 @@ export default defineConfig({
       "@img": path.resolve(__dirname, "./src/assets/img"),
       "@redux": path.resolve(__dirname, "./src/redux"),
       "@hooks": path.resolve(__dirname, "./src/hooks"),
-      "@firebaseConfig": path.resolve(__dirname, "./src/firebase")
+      "@firebaseConfig": path.resolve(__dirname, "./src/firebase"),
+      "@services": path.resolve(__dirname, "./src/services")
     }
   }
 });

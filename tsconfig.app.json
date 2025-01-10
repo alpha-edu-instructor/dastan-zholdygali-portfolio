@@ -30,7 +30,8 @@
       "@img/*": ["./src/assets/img/*"],
       "@firebaseConfig/*": ["./src/firebase/*"],
       "@redux/*": ["./src/redux/*"],
-      "@hooks/*": ["./src/hooks/*"]
+      "@hooks/*": ["./src/hooks/*"],
+      "@services/*": ["./src/services/*"]
     }
   },
   "include": ["src"]
