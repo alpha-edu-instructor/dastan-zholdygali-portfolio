@@ -9,7 +9,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  grid-gap: 16px;
+  gap: 16px;
 }
 
 .contact-form {
@@ -50,5 +50,21 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .contact {
+    grid-gap: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-links {
+    margin-top: 20px;
   }
 }

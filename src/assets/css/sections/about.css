@@ -2,6 +2,11 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 72px;
+  align-items: center;
+}
+
+.about-img {
+  width: 100%;
 }
 
 .about-links {
@@ -10,4 +15,23 @@
   justify-content: flex-start;
   align-items: center;
   grid-gap: 16px;
+}
+
+@media screen and (max-width: 960px) {
+  .about {
+    grid-gap: 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+  }
+  .about-img {
+    display: none;
+  }
+  .about-links {
+    margin-top: 20px;
+  }
 }

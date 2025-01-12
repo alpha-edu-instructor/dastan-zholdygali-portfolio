@@ -1,3 +1,5 @@
+import { ProjectType } from "./enums";
+
 export interface IAppRoute {
   path: string;
   element: React.FC;
@@ -10,4 +12,14 @@ export interface ICategory {
   link: string;
   imageUrl: string;
   isWhite: boolean;
+}
+
+export interface IProject {
+  id: string;
+  title: string;
+  description: string;
+  previewUrl: string;
+  fileUrl: string;
+  type: ProjectType;
+  categoryId: string;
 }

@@ -23,7 +23,7 @@
   right: 0;
   width: 100%;
   height: 100%;
-  filter: blur(1.5px);
+  /* filter: blur(1.5px); */
   background-size: cover;
   background-position: center;
   transition: 0.6s ease;
@@ -38,6 +38,8 @@
   color: var(--black);
   font-size: 36px;
   line-height: 48px;
+  width: 80vh;
+  text-align: center;
   text-transform: uppercase;
   font-family: "Futura PT Demi", serif;
   transition: 0.6s ease;
@@ -52,4 +54,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 960px) {
+  .portfolio-list {
+    margin-top: 48px;
+  }
+  .portfolio-section {
+    padding: 108px 0;
+  }
+  .portfolio-section__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .portfolio-section:hover .portfolio-section__title {
+    font-size: 36px;
+  }
 }
